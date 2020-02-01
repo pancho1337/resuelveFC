@@ -1,15 +1,12 @@
 const express = require('express');
 
 const app = express();
+var data = require('./resuelvefc.json');
 
-app.get('/api/customers', (req, res) =>{
-    const customers = [
-        {id: 1, firstName: 'John', lastName: 'Castillo'},
-        {id: 1, firstName: 'Alex', lastName: 'Vazquez'},
-        {id: 1, firstName: 'Freddy', lastName: 'Gonzalez'}
-    ];
-    res.json(customers)
-});
+
+app.get('/teamdata', function(req, res){
+   res.send(data)
+})
 
 const port = 5000;
 
